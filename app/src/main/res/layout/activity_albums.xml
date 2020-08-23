@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/profileImage"
+            android:src="@drawable/profile_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/userNameTextVIew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="User"
+            android:layout_below="@id/profileImage"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/userNameTextVIew"
+            android:text="User Albums"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/topLayout"
+        android:id="@+id/albumsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="5dp"
+        android:divider="@color/background"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"/>
+    <ProgressBar
+        android:id="@+id/albumsProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+    <include layout="@layout/layout_error"
+        android:id="@+id/layoutAlbumsError"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/layoutAlbumsEmpty"
+        layout="@layout/layout_empty"
+        android:visibility="gone" />
+</RelativeLayout>
